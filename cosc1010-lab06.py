@@ -1,8 +1,8 @@
-# Your Name Here
+# Koi Adderley
 # UWYO COSC 1010
-# Submission Date
+# 15/10/2024
 # Lab 06
-# Lab Section: 
+# Lab Section: 11
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -63,13 +63,25 @@ zkdenxczyooloczcaahnkehbwimvieedpdlqfafbqvxvfmvabd
 """
 random_string = random_string.replace("\n","") #remove all newline characters
 print(len(random_string)) # Print out the size for reference 
-
 # Above is a string with 2500 characters.
 # Create a program that goes through and counts the occurrence of each character, excluding \n using a  dictionary
+char_count = {}
 # Output each letter and its corresponding occurrence in alphabetical order
+letter_count = Counter(filter(str.isalpha, random_string.lower()))
+
 # Output which letter occurred the most 
+most_occurred = max(sorted_letters, key=sorted_letters.get)
+print(f"\nMost Occurred Letter: '{most_occurred}' (Count = {sorted_letters[most_occurred]})")
+
 # Output which letter occurred the least 
+least_occurred = min(sorted_letters, key=sorted_letters.get)
+print(f"Least Occurred Letter: '{least_occurred}' (Count = {sorted_letters[least_occurred]})")
+
 # Output what the percentage of the string each character is, again in alphabetical
+print("Letter Occurrences and Percentages:")
+for letter, count in sorted_letters.items():
+    percentage = (count / total_letters) * 100
+    print(f"{letter}: Count = {count}, Percentage = {percentage:.2f}%")
 
 #Tips and trick:
 # You can iterate through strings like you would a list
